@@ -1,0 +1,13 @@
+<div class="container padding">
+  <div class="jumbotron">
+    <h1 class="display-4">Quotes</h1>
+    <app-form (addTodo)="submitQuote($event)"></app-form>
+    <div class="card">
+      <div class="card-body" *ngFor="let quote of quotes">
+        <h5 class="card-title">{{ quote.quote }}</h5>
+        <!-- <p class="card-text">{{ quote.quoteCreator }}</p> -->
+        <a href="#" class="btn btn-primary">Go somewhere</a>
+      </div>
+    </div>
+  </div>
+</div>
