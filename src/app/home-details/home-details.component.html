@@ -1,0 +1,45 @@
+<div>
+  <p class="card-title" style=" font-style: italic; font-weight: bold">
+    By {{ quote.quoteCreator }}
+  </p>
+  <p class="card-title">
+    Quote created {{ quote.completeDate | dateCount }} days ago
+  </p>
+  <p class="card-title">
+    <strong>{{ quote.votes }}</strong> votes
+  </p>
+  <div style="width: 50%">
+    <div class="row">
+      <div class="col">
+        <button
+          type="button"
+          class="btn btn-outline-danger"
+          style="margin-bottom: 15px"
+          (click)="deleteQuote(true)"
+        >
+          Delete
+        </button>
+      </div>
+      <div class="col">
+        <button
+          type="button"
+          class="btn btn-outline-success"
+          style="margin-bottom: 15px"
+          (click)="Upvote()"
+        >
+          Upvote
+        </button>
+      </div>
+      <div class="col">
+        <button
+          type="button"
+          class="btn btn-outline-success"
+          style="margin-bottom: 15px"
+          (click)="Downvote()"
+        >
+          Downvote
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

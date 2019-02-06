@@ -1,4 +1,5 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, OnInit, EventEmitter, Output } from "@angular/core";
+import { Quotes } from "../quotes";
 
 @Component({
   selector: "app-form",
@@ -6,9 +7,13 @@ import { Component, OnInit } from "@angular/core";
   styleUrls: ["./form.component.css"]
 })
 export class FormComponent implements OnInit {
-  quotesArray = [];
-  addTodo(value) {
-    this.quotesArray.push(value);
+  newQuote = new Quotes(1, "", "", new Date(), 0);
+  @Output() passQuote = new EventEmitter<Quotes>();
+  addTodo() {
+    console.log(this.newQuote);
+    this.passQuote.emit(this.newQuote);
+    this.newQuote = new Quotes(1, "", "", new Date(), 0);
+    // this.quotesArray.push(value);
     // console.log(this.todos)
   }
   constructor() {}

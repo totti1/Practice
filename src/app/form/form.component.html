@@ -5,7 +5,8 @@
       class="form-control"
       id="exampleFormControlTextarea1"
       rows="3"
-      #quote
+      [(ngModel)]="newQuote.quote"
+      name="quote"
     ></textarea>
   </div>
   <div class="form-group">
@@ -15,13 +16,11 @@
       class="form-control"
       id="exampleFormControlInput1"
       placeholder="Katy Aristote"
+      [(ngModel)]="newQuote.quoteCreator"
+      name="quoteCreator"
     />
   </div>
-  <button
-    type="button"
-    class="btn btn-outline-dark right"
-    (click)="addTodo(quote.value)"
-  >
+  <button type="button" class="btn btn-outline-dark right" (click)="addTodo()">
     Add quote
   </button>
 </div>
